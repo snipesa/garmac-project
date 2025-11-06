@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "id": "air-fryer",
+      "name": "Air Fryer",
+      "description": "Modern air fryer for healthy cooking",
+      "image": "items/air-fryer.jpg",
+      "targetAmount": 8500,
+      "contributedAmount": 2000
+    },
+    {
+      "id": "stand-mixer",
+      "name": "Stand Mixer",
+      "description": "Professional stand mixer for baking",
+      "image": "items/stand-mixer.jpg",
+      "targetAmount": 12000,
+      "contributedAmount": 0
+    },
+    {
+      "id": "table-lamp",
+      "name": "Table Lamp",
+      "description": "Elegant table lamp for home decor",
+      "image": "items/table-lamp.jpg",
+      "targetAmount": 15000,
+      "contributedAmount": 10000
+    },
+    {
+      "id": "throw-blanket",
+      "name": "Throw Blanket",
+      "description": "Cozy throw blanket for the living room",
+      "image": "items/throw-blanket.jpg",
+      "targetAmount": 35000,
+      "contributedAmount": 0
+    },
+    {
+      "id": "towel-set",
+      "name": "Towel Set",
+      "description": "Premium towel set for the bathroom",
+      "image": "items/towel-set.jpg",
+      "targetAmount": 25000,
+      "contributedAmount": 5000
+    },
+    {
+      "id": "wine-glass",
+      "name": "Wine Glasses",
+      "description": "Elegant wine glasses for special occasions",
+      "image": "items/wine-glass.jpg",
+      "targetAmount": 30000,
+      "contributedAmount": 0
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('items/D-K_Afair.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(101, 67, 33, 0.7);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.wedding-rings {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #D2691E;
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.couple-names {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.wedding-tagline {
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.decorative-line {
+    width: 100px;
+    height: 2px;
+    background: #D2691E;
+    margin: 0 auto;
+}
+
+/* Main Content */
+.main-content {
+    padding: 60px 0;
+}
+
+.intro-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.intro-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #654321;
+    margin-bottom: 1.5rem;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Gifts Grid */
+.gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.gift-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.gift-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gift-card.fully-funded {
+    border: 2px solid #8B4513;
+}
+
+.gift-card.fully-funded:hover {
+    transform: translateY(-5px);
+}
+
+.gift-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gift-card:hover .gift-image {
+    transform: scale(1.05);
+}
+
+.gift-info {
+    padding: 2rem;
+}
+
+.gift-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #654321;
+    margin-bottom: 0.5rem;
+}
+
+.gift-description {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.funded-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #8B4513;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.funding-details {
+    margin-bottom: 1.5rem;
+}
+
+.funding-amounts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.funding-amounts > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.funding-amounts .label {
+    color: #666;
+    font-weight: 500;
+}
+
+.funding-amounts .amount {
+    font-weight: 600;
+}
+
+.target-amount .amount {
+    color: #654321;
+}
+
+.contributed-amount .amount {
+    color: #8B4513;
+}
+
+.remaining-amount {
+    grid-column: 1 / -1;
+    border-top: 1px solid #e1e5e9;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.remaining-amount .amount {
+    color: #A0522D;
+    font-size: 1.1rem;
+}
+
+.progress-bar {
+    position: relative;
+    background: #f1f3f4;
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8B4513 0%, #654321 100%);
+    border-radius: 10px;
+    transition: width 0.6s ease;
+}
+
+.progress-text {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 600;
+    text-align: center;
+    display: block;
+}
+
+.contribute-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contribute-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(160, 82, 45, 0.3);
+}
+
+.contribute-btn.disabled {
+    background: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.contribute-btn.disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 2% auto;
+    padding: 0;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translate(-50%, -60px); opacity: 0; }
+    to { transform: translate(0, 0); opacity: 1; }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Payment Confirmation Modal Styles */
+.confirmation-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.confirmation-icon {
+    font-size: 3rem;
+    color: #A0522D;
+    margin-bottom: 1.5rem;
+}
+
+.confirmation-message {
+    font-size: 1.1rem;
+    color: #654321;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.confirmation-details {
+    background: #f8f9fa;
+    border: 1px solid #e1e5e9;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.confirmation-details h4 {
+    color: #654321;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.confirmation-details .detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.confirmation-details .detail-row:last-child {
+    border-bottom: none;
+    font-weight: 600;
+    color: #654321;
+}
+
+.confirmation-details .detail-label {
+    color: #666;
+}
+
+.confirmation-details .detail-value {
+    color: #333;
+    font-weight: 500;
+}
+
+.confirmation-question {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #654321;
+    margin-bottom: 2rem;
+}
+
+/* Form Styles */
+.contribution-form {
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #654321;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #A0522D;
+    box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.1);
+}
+
+.form-hint {
+    display: block;
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(160, 82, 45, 0.3);
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: #666;
+    border: 2px solid #e1e5e9;
+}
+
+.btn-secondary:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.loading-spinner i {
+    font-size: 3rem;
+    color: #D2691E;
+    margin-bottom: 1rem;
+}
+
+.loading-spinner p {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+.footer {
+    background: #654321;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 80px;
+}
+
+.footer i {
+    color: #D2691E;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .couple-names {
+        font-size: 2.5rem;
+    }
+    
+    .wedding-tagline {
+        font-size: 1.2rem;
+    }
+    
+    .intro-section h2 {
+        font-size: 2rem;
+    }
+    
+    .gifts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        margin: 5% auto;
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 0 15px;
+    }
+    
+    .couple-names {
+        font-size: 2rem;
+    }
+    
+    .wedding-rings {
+        font-size: 3rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .contribution-form {
+        padding: 1.5rem;
+    }
+    
+    .modal-header {
+        padding: 1.5rem;
+    }
+}
